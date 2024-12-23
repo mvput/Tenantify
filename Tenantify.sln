@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tenantify", "src\Tenantify\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tenantify.AspNetCore", "src\Tenantify.AspNetCore\Tenantify.AspNetCore.csproj", "{62081834-7124-4826-869A-89D3201EC300}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{51C74806-89B6-4164-89E5-18166581709F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tenantify.Samples.WebApi", "samples\Tenantify.Samples.WebApi\Tenantify.Samples.WebApi.csproj", "{E20A77F9-DEAA-4C8D-A178-F4221EBF6992}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +24,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{48A09802-9218-469E-A74B-28C2C19A12BA} = {0617DE41-B4ED-4C5A-BF1F-E341A7A8C8A5}
 		{62081834-7124-4826-869A-89D3201EC300} = {0617DE41-B4ED-4C5A-BF1F-E341A7A8C8A5}
+		{E20A77F9-DEAA-4C8D-A178-F4221EBF6992} = {51C74806-89B6-4164-89E5-18166581709F}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{48A09802-9218-469E-A74B-28C2C19A12BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -30,5 +35,9 @@ Global
 		{62081834-7124-4826-869A-89D3201EC300}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62081834-7124-4826-869A-89D3201EC300}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62081834-7124-4826-869A-89D3201EC300}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E20A77F9-DEAA-4C8D-A178-F4221EBF6992}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E20A77F9-DEAA-4C8D-A178-F4221EBF6992}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E20A77F9-DEAA-4C8D-A178-F4221EBF6992}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E20A77F9-DEAA-4C8D-A178-F4221EBF6992}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

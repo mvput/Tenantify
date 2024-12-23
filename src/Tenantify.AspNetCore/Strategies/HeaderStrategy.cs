@@ -1,10 +1,11 @@
 using System.Globalization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Options;
 using Tenantify.Abstractions;
 
 namespace Tenantify.AspNetCore.Strategies;
 
-public class HeaderStrategy<TTenant, TId, TIdentifier>(string headerKey) : ITenantStrategy<TTenant, TId, TIdentifier> where TTenant : ITenant<TId, TIdentifier> where TId : IEquatable<TId>, ISpanParsable<TId> where TIdentifier : IEquatable<TIdentifier>, ISpanParsable<TIdentifier>
+public class HeaderStrategy<TTenant, TId, TIdentifier>(IOptions<HeaderOptions> options) : ITenantStrategy<TTenant, TId, TIdentifier> where TTenant : ITenant<TId, TIdentifier> where TId : IEquatable<TId>, ISpanParsable<TId> where TIdentifier : IEquatable<TIdentifier>, ISpanParsable<TIdentifier>
 {
     public Task<TIdentifier?> ResolveIdentifier(object context)
     {
@@ -13,7 +14,7 @@ public class HeaderStrategy<TTenant, TId, TIdentifier>(string headerKey) : ITena
             return Task.FromResult<TIdentifier?>(default);
         }
 
-        if (!httpContext.Request.Headers.TryGetValue(headerKey, out var values) || values.Count != 0)
+        if (!httpContext.Request.Headers.TryGetValue(options.Value.HeaderKey, out var values) || values.Count == 0)
         {
             return Task.FromResult<TIdentifier?>(default);
         }
